@@ -1,0 +1,70 @@
+# Build output directories
+bin/
+obj/
+out/
+publish/
+artifacts/
+
+# Package and dependency files
+*.nupkg
+*.snupkg
+*.deps.json
+*.dll
+*.exe
+*.pdb
+*.cache
+*.lock.json
+
+# NuGet and other dependency folders
+.nuget/
+**/packages/
+**/node_modules/
+**/lib/
+
+# Common JS/CSS frontend libraries
+wwwroot/lib/
+wwwroot/js/jquery*
+wwwroot/js/bootstrap*
+wwwroot/css/bootstrap*
+
+# Project lock files
+project.lock.json
+project.fragment.lock.json
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Editor and IDE settings
+.vscode/
+.idea/
+
+# Log and temp files
+*.log
+*.tmp
+*.temp
+*.bak
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Local database files
+*.db
+*.sqlite
+
+# Environment variable files
+.env
+.env.*
+
+# Include only core project files
+!Controllers/
+!Models/
+!Views/
+!Program.cs
+!Startup.cs
+!appsettings*.json
+!*.csproj
+!*.sln
