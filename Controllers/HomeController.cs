@@ -1,31 +1,30 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SkySea_Commerce.Models;
-
 namespace SkySea_Commerce.Controllers;
 
 public class HomeController : Controller
+
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    // localhost:5081/home
+    public ActionResult Index()
     {
-        _logger = logger;
+        return View(); // View /Home/Index.cshtml
+
     }
 
-    public IActionResult Index()
+
+
+    // localhost:5081/home/about
+    public ActionResult About()
+    {
+        return View(); // View /Home/About.cshtml
+    }
+
+    // localhost:5081/home/contact
+    public ActionResult Contact() // View /Home/Contact.cshtml
     {
         return View();
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
+
 }
