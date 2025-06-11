@@ -4,27 +4,28 @@ namespace SkySea_Commerce.Controllers;
 public class HomeController : Controller
 
 {
-    // localhost:5081/home
+    
     public ActionResult Index()
     {
-        return View(); // View /Home/Index.cshtml
+        int number1 = 10;
+        int number2 = 20;
+        int sum = number1 + number2;
+
+        ViewData["Sum"] = sum; 
+
+        return View(); 
 
     }
-
-
-
-    // localhost:5081/home/about
+    
     public ActionResult About()
     {
-        return View(); // View /Home/About.cshtml
+        return View(); 
     }
 
-    // localhost:5081/home/contact
-    public ActionResult Contact() // View /Home/Contact.cshtml
+    
+    public ActionResult Contact() 
     {
         return View();
     }
-
-
 
 }
