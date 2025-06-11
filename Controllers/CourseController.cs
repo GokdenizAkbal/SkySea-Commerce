@@ -16,28 +16,15 @@ namespace SkySea_Commerce.Controllers
         
         public ActionResult  List()
         {
+            // Course[] courses = [course1, course2, course3];
 
-            string[] courseNames = ["C# Programming", "Python for Beginners"];
-            string[] courseDescriptions = [
-                "Learn the fundamentals of C# programming.",
-                "An introduction to Python for new programmers."
-            ];
-
-            string[] courseImages = ["c-sharp.png", "python.jpg"];
-
-            ViewData["CourseName1"] = courseNames[0];
-            ViewData["CourseName2"] = courseNames[1];
-            ViewData["CourseDescription1"] = courseDescriptions[0];
-            ViewData["CourseDescription2"] = courseDescriptions[1];
-            ViewData["CourseImage1"] = courseImages[0];
-            ViewData["CourseImage2"] = courseImages[1];
+            List<Course> courses = new List<Course>{
+                    new Course { Title = "C# Programming", Image = "c-sharp.png"},
+                    new Course { Title = "Python Programming", Image = "python.jpg"},
+                    new Course { Title = "Java Programming", Image = "java.jpg"}
+            };
             
-             
-
-
-
-
-            return View();
+            return View(courses);
         }
         
         public ActionResult  Details()

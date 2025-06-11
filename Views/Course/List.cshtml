@@ -1,3 +1,7 @@
+@* @model Course[]  *@
+@* @model IEnumerable<Course> *@
+@model List<Course>
+
 <h1>Course/List</h1>
 
 <div class="row">
@@ -5,13 +9,11 @@
  <div class="col">
 
         <div class="card">
-            <img src="~/img/@ViewData["CourseImage1"]" class="card-img-top" alt="">
+            <img src="~/img/@Model[0].Image" class="card-img-top" alt="">
             <div class="card-body">
-                <h5 class="card-title">@ViewData["CourseName1"]</h5>
-                <p class="card-text">@ViewData["CourseDescription1"]</p>
+                <h5 class="card-title">@Model[0].Title</h5>
                 <a href="#" class="card-link">Analyze</a>
             </div>
-
         </div>
 
     </div>
@@ -19,15 +21,23 @@
     <div class="col">
 
         <div class="card">
-            <img src="~/img/@ViewData["CourseImage2"]" class="card-img-top" alt="">
+            <img src="~/img/@Model[1].Image" class="card-img-top" alt="">
             <div class="card-body">
-                <h5 class="card-title">@ViewData["CourseName2"]</h5>
-                <p class="card-text">@ViewData["CourseDescription2"]</p>
+                <h5 class="card-title">@Model[1].Title</h5>
                 <a href="#" class="card-link">Analyze</a>
             </div>
-
         </div>
+    </div>
 
+    <div class="col"></div>
+
+        <div class="card">
+            <img src="~/img/@Model[2].Image" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">@Model[2].Title</h5>
+                <a href="#" class="card-link">Analyze</a>
+            </div>
+        </div>
     </div>
 
 
