@@ -7,5 +7,6 @@ public class Product
     public double productPrice { get; set; }
     public string? productImage { get; set; }
     public bool isAvailable { get; set; }
+    public int productQuantity { get; set; }
 
 }

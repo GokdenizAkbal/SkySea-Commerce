@@ -5,29 +5,28 @@ namespace SkySea_Commerce.Controllers
 {
     public class CourseController : Controller
     {
-       
+        List<Course> courses = new List<Course>{
+                    new Course { Title = "C# Programming", Image = "c-sharp.png"},
+                    new Course { Title = "Python Programming", Image = "python.jpg"},
+                    new Course { Title = "Java Programming", Image = "java.jpg"},
+                    new Course { Title = "Angular Programming", Image = "angular.jpg"},
+            };
         public ActionResult Index()
         {
-            return View(); 
+            return View(courses);
         }
 
 
 
-        
-        public ActionResult  List()
+
+        public ActionResult List()
         {
             // Course[] courses = [course1, course2, course3];
 
-            List<Course> courses = new List<Course>{
-                    new Course { Title = "C# Programming", Image = "c-sharp.png"},
-                    new Course { Title = "Python Programming", Image = "python.jpg"},
-                    new Course { Title = "Java Programming", Image = "java.jpg"}
-            };
-            
             return View(courses);
         }
-        
-        public ActionResult  Details()
+
+        public ActionResult Details()
         {
 
             Course course1 = new Course();
@@ -36,7 +35,7 @@ namespace SkySea_Commerce.Controllers
             course1.Image = "c-sharp.png";
 
 
-            return View(course1); 
+            return View(course1);
         }
     }
-} 
+}

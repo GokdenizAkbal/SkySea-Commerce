@@ -1,13 +1,13 @@
+@model List<Course>
 <h1 class="mb-3">Courses</h1>
 
 <div class="row courses">
     
-    @await Html.PartialAsync("_CourseCard")
-    @await Html.PartialAsync("_CourseCard")
-    @await Html.PartialAsync("_CourseCard")
-    @await Html.PartialAsync("_CourseCard")
-        
-    
-        
+   @foreach(Course course in Model)
+    {
+         @await Html.PartialAsync("_CourseCard",course)
+    }
+
+
     
 </div>

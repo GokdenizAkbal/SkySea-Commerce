@@ -5,14 +5,14 @@ namespace SkySea_Commerce.Controllers;
 
 public class ProductsController : Controller
 {
-       public ActionResult Index()
+    public ActionResult Index()
     {
         string[] courses = { "C# Programming", "Python Programming", "Java Programming" };
 
-        return View(courses); 
+        return View(courses);
     }
 
-    
+
     public ActionResult List()
     {
         List<Product> products = new List<Product>
@@ -43,22 +43,25 @@ public class ProductsController : Controller
 
         };
 
-        return View(products); 
+        return View(products);
     }
 
-        public ActionResult Details()
+    public ActionResult Details()
     {
 
-        Product product1 = new Product();
+        Product product1 = new Product()
+        {
 
-        product1.productTitle = "iPhone 13";
-        product1.productDescription = "iPhone 13 128GB, White";
-        product1.productPrice = 30.000;
-        product1.productImage = "iphone-13.jpg";
-        product1.isAvailable = true;
+            productTitle = "iPhone 13",
+            productDescription = "iPhone 13 128GB, White",
+            productPrice = 30.000,
+            productImage = "iphone-13.jpg",
+            isAvailable = true,
+            productQuantity = 0
 
-        return View(product1); 
+        };
+        return View(product1);
     }
 
-    
+
 }

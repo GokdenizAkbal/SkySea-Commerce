@@ -7,11 +7,43 @@
 
     </div>
     <div class="col-8">
-        <h1>@Model.productTitle</h1>
-        <p>@Model.productDescription</p>
-        <p>@Model.productPrice</p>
-        <p>@Model.isAvailable</p>
-        
+        <h1>
+            @Model.productTitle
+
+        </h1>
+        <p>
+            @Model.productDescription
+        </p>
+        <p>
+            @Model.productPrice
+        </p>
+
+        @if (Model.isAvailable)
+        {
+            @if (Model.productQuantity > 0)
+            {
+                <p>
+                    Available
+                </p>
+            }
+            else
+            {
+                <p>
+                    Not enough stock
+                </p>
+            }
+
+        }
+        else
+        {
+            <p>
+                Not available
+            </p>
+        }
+
+
+
+
     </div>
 
 </div>
