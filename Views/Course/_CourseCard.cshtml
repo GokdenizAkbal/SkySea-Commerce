@@ -1,12 +1,11 @@
  @model Course
  <div class="col">
 
-        <div class="card">
+        <div class="card mb-3">
             <img src="~/img/@Model.Image" class="card-img-top" alt="">
             <div class="card-body">
                 <h5 class="card-title">@Model.Title</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nemo?</p>
-                <a href="#" class="card-link">Analyze</a>
+                <a asp-controller ="Course" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary">Analyze</a>
             </div>
 
         </div>

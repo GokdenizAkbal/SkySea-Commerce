@@ -5,62 +5,58 @@ namespace SkySea_Commerce.Controllers;
 
 public class ProductsController : Controller
 {
+    List<Product> products =
+        [
+            new Product{
+                Id = 1,
+                productTitle = "iPhone 16",
+                productDescription = "iPhone 16 128GB, Ultramarine",
+                productPrice = 70.000,
+                productImage = "iphone-16.jpeg",
+                isAvailable = true,
+                IsHome = true
+            },
+            new Product{
+                Id = 2,
+                productTitle = "iPhone 16e",
+                productDescription = "iPhone 16e 128GB, White",
+                productPrice = 50.000,
+                productImage = "iphone-16e.jpeg",
+                isAvailable = true,
+                IsHome = true
+            },
+            new Product{
+                Id = 3,
+                productTitle = "iPhone 16 Pro",
+                productDescription = "iPhone 16 Pro 128GB, Desert Titanium",
+                productPrice = 90.000,
+                productImage = "iphone-16-pro.jpeg",
+                isAvailable = true,
+                IsHome = false
+            },
+
+
+
+        ];
     public ActionResult Index()
     {
-        string[] courses = { "C# Programming", "Python Programming", "Java Programming" };
-
-        return View(courses);
+        List<Product> productS = products.Where(p => p.IsHome).ToList();
+        return View(productS);
     }
 
 
     public ActionResult List()
     {
-        List<Product> products = new List<Product>
-        {
-            new Product{
-                productTitle = "iPhone 16",
-                productDescription = "iPhone 16 128GB, Ultramarine",
-                productPrice = 70.000,
-                productImage = "iphone-16.jpeg",
-                isAvailable = true
-            },
-            new Product{
-                productTitle = "iPhone 16e",
-                productDescription = "iPhone 16e 128GB, White",
-                productPrice = 50.000,
-                productImage = "iphone-16e.jpeg",
-                isAvailable = true
-            },
-            new Product{
-                productTitle = "iPhone 16 Pro",
-                productDescription = "iPhone 16 Pro 128GB, Desert Titanium",
-                productPrice = 90.000,
-                productImage = "iphone-16-pro.jpeg",
-                isAvailable = false
-            },
-
-
-
-        };
 
         return View(products);
     }
 
-    public ActionResult Details()
+    public ActionResult Details(int id)
     {
 
-        Product product1 = new Product()
-        {
+        Product? product = products.Where(p => p.Id == id).FirstOrDefault();
 
-            productTitle = "iPhone 13",
-            productDescription = "iPhone 13 128GB, White",
-            productPrice = 30.000,
-            productImage = "iphone-13.jpg",
-            isAvailable = true,
-            productQuantity = 0
-
-        };
-        return View(product1);
+        return View(product);
     }
 
 

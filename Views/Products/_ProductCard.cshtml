@@ -1,0 +1,19 @@
+@model Product
+
+<div class="card mb-3 shadow">
+
+    <img src="~/img/@Model.productImage" class="card-img-top p-3 pt-0">
+
+
+    <div class="card-body bg-light">
+        <h5 class="card-title"> @Model.productTitle </h5>
+        <p class="card-text"> @Model.productDescription </p>
+        @if (!Model.isAvailable)
+        {
+            <p>Not Available</p>
+        }
+        <a asp-controller="Products" asp-action="Details" asp-route-id="@Model.Id"
+            class="btn btn-outline-secondary d-flex justify-content-center"> Details </a>
+    </div>
+
+</div>

@@ -1,32 +1,13 @@
 @model List<Product>
-<h1>Products/List</h1>
+
 
 <div class="row">
-    @foreach (Product p in Model)
+    @foreach (Product product in Model)
     {
-        @if (p.isAvailable)
+        @if (product.isAvailable)
         {
-
-
-            <div class="col-6">
-                <div class="card mb-3">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="~/img/@p.productImage" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title"> @p.productTitle </h5>
-                                <p class="card-text"> @p.productDescription </p>
-                                @if (!p.isAvailable)
-                                {
-                                    <p>Not Available</p>
-                                }
-                                <button class="btn btn-primary btn-sm"> Details </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-3">
+                @await Html.PartialAsync("_ProductCard", product)
             </div>
         }
     }

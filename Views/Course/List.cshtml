@@ -2,21 +2,14 @@
 @* @model IEnumerable<Course> *@
 @model List<Course>
 
-<h1>Course/List</h1>
+<h1 class="h3 b-3">All Courses</h1>
 
 <div class="row">
 
-    @foreach (Course c in Model)
+    @foreach (Course course in Model)
     {
-        <div class="col">
-
-            <div class="card">
-                <img src="~/img/@c.Image" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">@c.Title</h5>
-                    <a href="#" class="card-link">Analyze</a>
-                </div>
-            </div>
-        </div>
+        <div class="col-md-3">
+         @await Html.PartialAsync("_CourseCard",course)
+         </div>
     }
 </div>
